@@ -1,16 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[8]:
-
-
+#Import necessary libraries
 import cv2
 import sys
 import pytesseract
 import re
-
-
-# In[9]:
 
 
 if __name__ == '__main__':
@@ -27,9 +22,6 @@ if __name__ == '__main__':
     im = cv2.imread(imPath, cv2.IMREAD_GRAYSCALE)
 
     text = pytesseract.image_to_string(im, config=config)
-
-
-# In[10]:
 
 
 l = text.split("\n")
@@ -53,10 +45,3 @@ for data in l:
 for i in range(0,len(l)):
     if l[i].endswith('LTD.'):
         print(l[i])
-
-
-# In[ ]:
-
-
-
-
